@@ -1,0 +1,26 @@
+body {
+    background-color: #d5f4e6 ;
+}
+h1 {
+    font-family: Georgia;
+    color: #80ced6
+}
+.friends, p {
+    text-transform: uppercase;
+    font-family: Verdana;
+    color: bisque;
+    font-size: medium;
+}
+button {
+    color:#80ced6;
+    height: 27px;
+    width: 100px;
+}
+.container {
+    width: auto;
+    margin: auto;
+    height: 8em;
+    border: 3px solid #618685;
+    background-color: #80ced6;
+    padding: 6em;
+}
