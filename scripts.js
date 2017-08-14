@@ -1,40 +1,34 @@
-var friends = [ "Shala", "Merissa", "Steph", "Andre", "Jay" ];
-for(var i = 0; i < friends.length; i++) {
-    console.log(friends[i]+":");
+var friends = [ "Shala", "Merissa", "Kim", "Andre", "Bria" ];
+    numberOfLines = 99;
 
-   for(var j = 99; j >= 1; j--) {
-        if (j > 2) {
-            console.log([j] + ' lines of code in the file, ' + [j] + ' lines of code; ' + friends[i] + ' strikes one out, clears it all out, ' + (j-1) + ' lines of code in the file' );
-        } else if (j == 2) {
-            console.log([j] + ' lines of code in the file, ' + [j] + ' lines of code; ' + friends[i] + ' strikes one out, clears it all out, ' + (j-1) + ' line of code in the file' );
-        } else if (j = 1) {
-            console.log([j] + ' line of code in the file, ' + [j] + ' line of code; ' + friends[i] + ' strikes one out, clears it all out, no more lines of code in the file' );
-        }
-    }
-}
-//Button//
-document.addEventListener('DOMContentLoaded', function(){
-    for(var i = 0; i < friends.length; i++) {
-        console.log(friends[i]+":");
-        //1st loop make div, give it a class, make & append my h3 to div//
-    var friendDiv = document.createElement("div");
-        friendDiv.className = "container";
-        document.body.appendChild(friendDiv);
-    var div = document.createElement('div');
-    var para = document.createTextNode('Name');
-        div.appendChild(para);
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('sing');
+    button.addEventListener('click', singSong);
+});
 
-    for(var j = 99; j >= 1; j--) {
+function singSong() {
+    for (var i = 0; i < friends.length; i++) {
+        var friendDiv = document.createElement('div');
+        friendDiv.className = 'friendDiv';
+        var name = document.createElement('h3');
+        name.innerText = friends[i];
+        friendDiv.appendChild(name);
+
+        for (var j = numberOfLines; j > 0; j--) {
+            var log = document.createElement('p');
+            var k = j - 1;
+
             if (j > 2) {
-                console.log([j] + ' lines of code in the file, ' + [j] + ' lines of code; ' + friends[i] + ' strikes one out, clears it all out, ' + (j-1) + ' lines of code in the file' );
-            } else if (j == 2) {
-                console.log([j] + ' lines of code in the file, ' + [j] + ' lines of code; ' + friends[i] + ' strikes one out, clears it all out, ' + (j-1) + ' line of code in the file' );
-            } else if (j = 1) {
-                console.log([j] + ' line of code in the file, ' + [j] + ' line of code; ' + friends[i] + ' strikes one out, clears it all out, no more lines of code in the file' );
+                log.innerText = j + ' lines of code in the file, ' + j + ' lines of code, ' + friends[i] + ' strikes one out, clears it all out, ' + k + ' lines of code in the file, ';
+            } else if (j === 2) {
+                log.innerText = j + ' lines of code in the file, ' + j + ' lines of code, ' + friends[i] + ' strikes one out, clears it all out, ' + k + ' line of code in the file, ';
+            } else {
+                log.innerText = j + ' line of code in the file, ' + j + ' line of code, ' + friends[i] + ' strikes one out, clears it all out, no more lines of code in the file.';
             }
+
+            friendDiv.appendChild(log);
         }
+
+        document.body.appendChild(friendDiv);
     }
 }
-//2nd loop make p, put lyric in p & append p to div; here is where you append div to body//
-    );      
-
